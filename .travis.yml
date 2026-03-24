@@ -4,3 +4,15 @@ node_js:
 
 script:
   - npm test
+
+# Phần cấu hình CD (Continuous Deployment) 
+after_success:
+  # Travis gọi đến Deploy Hook URL của Render để ra lệnh deploy khi test thành công trên nhánh main.
+  - if [ "$TRAVIS_BRANCH" = "main" ]; then
+      if [ -n "$RENDER_DEPLOY_HOOK" ]; then
+        curl -X POST $RENDER_DEPLOY_HOOK;
+        echo "Triggered Render Deploy Hook!";
+      else
+        echo "No RENDER_DEPLOY_HOOK configured.";
+      fi
+    fi
