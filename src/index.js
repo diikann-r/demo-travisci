@@ -10,7 +10,24 @@ app.get('/', (req, res) => {
     res.status(200).json({
         group: 'Nhóm 11',
         topic: 'Tìm hiểu và Demo Travis CI',
-        status: 'success'
+        team: {
+            item: {
+                name: 'ho duy khang'
+            },
+            item: {
+                name: 'k to mis '
+            },
+            item: {
+                name: 'tran quang duy'
+            },
+            item: {
+                name: 'le tan duy hieu'
+            },
+            item: {
+                name: 'doan van nghia'
+            },
+        },
+        status: 'faild'
     });
 });
 
