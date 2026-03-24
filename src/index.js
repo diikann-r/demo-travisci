@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
                 name: 'doan van nghia'
             },
         },
-        status: 'faild'
+        status: 'success'
     });
 });
 
